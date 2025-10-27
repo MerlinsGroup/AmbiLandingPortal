@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy2Recruit Portal - Automated Recruitment Solutions</title>
+    <title>Easy2Recruit Portal - Powered by Merlins Group | Automated Recruitment Revolution</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #FF3333;
+            --dark-red: #cc0000;
+            --pure-black: #000000;
+            --dark-gray: #111111;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
         }
 
         body {
@@ -18,19 +27,60 @@
             overflow-x: hidden;
         }
 
-        /* Header */
-        .header {
-            background: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* Top Banner - Powered by Merlins */
+        .top-banner {
+            background: linear-gradient(90deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 0.75rem 0;
+            text-align: center;
+            font-weight: 600;
             position: fixed;
             width: 100%;
             top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            margin-left: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .top-banner a:hover {
+            border-bottom-color: transparent;
+            opacity: 0.9;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .merlins-logo-small {
+            height: 25px;
+            vertical-align: middle;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 45px;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -38,25 +88,14 @@
             padding: 0 2rem;
         }
 
-        .logo {
+        .logo-section {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #000;
+            gap: 1rem;
         }
 
-        .logo-circle {
-            width: 40px;
-            height: 40px;
-            background: #FF3333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-            color: white;
-            font-size: 1.2rem;
+        .e2r-logo {
+            height: 45px;
         }
 
         .nav-links {
@@ -66,56 +105,79 @@
         }
 
         .nav-links a {
-            color: #000;
+            color: var(--pure-black);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #FF3333;
+            color: var(--primary-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .cta-button {
-            background: #FF3333;
-            color: white;
-            padding: 0.75rem 1.5rem;
+            background: var(--primary-red);
+            color: white !important;
+            padding: 0.75rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(255,51,51,0.3);
         }
 
         .cta-button:hover {
-            background: #cc0000;
+            background: var(--dark-red);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,51,51,0.3);
+            box-shadow: 0 6px 25px rgba(255,51,51,0.4);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, white 0%, var(--light-gray) 100%);
+            padding: 160px 0 100px;
             position: relative;
-            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%);
+            top: 0;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,51,51,0.05) 0%, transparent 70%);
             border-radius: 50%;
+            animation: pulse-slow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .hero-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
@@ -127,48 +189,87 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
+            font-size: 4rem;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: #000;
+            color: var(--pure-black);
+            font-weight: 900;
         }
 
         .hero-content h1 span {
-            color: #FF3333;
+            color: var(--primary-red);
+            position: relative;
+        }
+
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-red);
+            animation: expand 1s ease-out;
+        }
+
+        @keyframes expand {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #666;
             margin-bottom: 2rem;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        .hero-features {
-            display: flex;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        .feature-badge {
+        .stat-mini {
+            text-align: center;
+        }
+
+        .stat-mini h3 {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-mini p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .hero-buttons {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #000;
-            font-weight: 600;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .feature-badge::before {
-            content: '✓';
-            background: #FF3333;
+        .secondary-button {
+            background: var(--pure-black);
             color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .secondary-button:hover {
+            background: #222;
+            transform: translateY(-2px);
         }
 
         .hero-visual {
@@ -181,140 +282,330 @@
             50% { transform: translateY(-20px); }
         }
 
-        .portal-preview {
+        .portal-mockup {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
             padding: 2rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .portal-header {
-            background: #FF3333;
-            height: 10px;
-            border-radius: 10px 10px 0 0;
-            margin: -2rem -2rem 1.5rem;
-        }
-
-        .portal-content {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .portal-item {
-            background: #f8f8f8;
+        .portal-browser {
+            background: var(--pure-black);
+            margin: -2rem -2rem 2rem;
             padding: 1rem;
-            border-radius: 10px;
+            border-radius: 20px 20px 0 0;
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
+
+        .browser-dot:nth-child(2) { background: #ffbd2e; }
+        .browser-dot:nth-child(3) { background: #27c93f; }
+
+        .portal-screen {
+            display: grid;
             gap: 1rem;
         }
 
-        .portal-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,51,51,0.1);
-            border-radius: 10px;
+        .screen-item {
+            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+            gap: 1rem;
+            transition: all 0.3s;
         }
 
-        /* Features Section */
-        .features-section {
-            padding: 80px 0;
-            background: #000;
+        .screen-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(255,51,51,0.1);
+        }
+
+        .screen-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
             color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #999;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: #111;
-            padding: 2rem;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #222;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255,51,51,0.2);
-            border-color: #FF3333;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: #FF3333;
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 100px 0;
+            background: var(--pure-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,51,51,0.1) 0%, transparent 100%);
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .video-header h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .video-header p {
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(255,51,51,0.4);
+            transition: all 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(255,51,51,0.6);
+        }
+
+        .play-button::before {
+            content: '▶';
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .video-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-feature {
+            text-align: center;
+            color: white;
+        }
+
+        .video-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,51,51,0.2);
+            border: 2px solid var(--primary-red);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Features Grid Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--pure-black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 2px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-red);
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-color: var(--primary-red);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            color: white;
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--pure-black);
         }
 
         .feature-card p {
-            color: #999;
+            color: #666;
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        /* Automation Section */
-        .automation-section {
-            padding: 80px 0;
-            background: white;
+        .feature-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
         }
 
-        .automation-container {
-            max-width: 1200px;
+        .feature-link:hover {
+            gap: 1rem;
+        }
+
+        /* Process Timeline */
+        .process-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--light-gray) 0%, white 100%);
+        }
+
+        .process-container {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .process-timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
             position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            z-index: 0;
         }
 
         .process-step {
             text-align: center;
             position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            z-index: 1;
         }
 
         .step-number {
             width: 60px;
             height: 60px;
-            background: #FF3333;
+            background: var(--primary-red);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -322,85 +613,332 @@
             justify-content: center;
             font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 auto 1.5rem;
+            margin: -3rem auto 1.5rem;
             position: relative;
-            z-index: 1;
+            box-shadow: 0 5px 20px rgba(255,51,51,0.3);
         }
 
         .step-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             margin-bottom: 1rem;
-            color: #000;
+            color: var(--pure-black);
         }
 
         .step-description {
             color: #666;
             line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .step-duration {
+            background: rgba(255,51,51,0.1);
+            color: var(--primary-red);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--pure-black);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #222;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 4rem;
+            color: var(--primary-red);
+            opacity: 0.5;
+        }
+
+        .testimonial-text {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
         }
 
         /* Stats Section */
         .stats-section {
-            background: #FF3333;
-            padding: 60px 0;
-            color: white;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
         }
 
         .stats-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             text-align: center;
         }
 
+        .stat-item {
+            color: white;
+        }
+
         .stat-item h3 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 0.5rem;
+            font-weight: 900;
         }
 
         .stat-item p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+        }
+
+        /* Integration Section */
+        .integration-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .integration-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .integration-logo {
+            width: 120px;
+            height: 60px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .integration-logo:hover {
+            transform: scale(1.1);
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,51,51,0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-plan {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--pure-black);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: #999;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #000 0%, #111 100%);
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--pure-black) 0%, #1a1a1a 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
+        .cta-section::before,
+        .cta-section::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,51,51,0.2) 0%, transparent 70%);
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
+        }
+
+        .cta-section::before {
+            top: -200px;
+            left: -200px;
+            background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%);
+        }
+
+        .cta-section::after {
+            bottom: -200px;
+            right: -200px;
+            background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%);
         }
 
         .cta-content {
             position: relative;
             z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .cta-section h2 {
             color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
         }
 
         .cta-section p {
             color: #999;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
         }
 
         .cta-buttons {
@@ -410,81 +948,88 @@
             flex-wrap: wrap;
         }
 
-        .secondary-button {
-            background: transparent;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid white;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .secondary-button:hover {
-            background: white;
-            color: #000;
-        }
-
         /* Footer */
         .footer {
-            background: #000;
+            background: var(--pure-black);
             color: white;
-            padding: 40px 0 20px;
+            padding: 60px 0 30px;
             border-top: 1px solid #222;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
-            text-align: center;
         }
 
-        .powered-by {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-red);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul li a {
             color: #999;
-            font-size: 0.9rem;
-        }
-
-        .powered-by a {
-            color: #FF3333;
             text-decoration: none;
-            font-weight: bold;
             transition: color 0.3s;
         }
 
-        .powered-by a:hover {
-            color: #ff6666;
+        .footer-column ul li a:hover {
+            color: white;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid #222;
+        }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+        .merlins-credit {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 20px;
+            border: 2px solid var(--primary-red);
+        }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
+        .merlins-credit h4 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
 
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
-            }
+        .merlins-credit p {
+            color: #999;
+            margin-bottom: 1rem;
+        }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+        .merlins-credit a {
+            color: white;
+            background: var(--primary-red);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .merlins-credit a:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
         }
 
         /* Animations */
@@ -493,8 +1038,17 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-left {
+            animation: slideLeft 1s ease-out;
+        }
+
+        @keyframes slideLeft {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
         .pulse {
@@ -506,21 +1060,133 @@
             70% { box-shadow: 0 0 0 20px rgba(255,51,51,0); }
             100% { box-shadow: 0 0 0 0 rgba(255,51,51,0); }
         }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--pure-black);
+            transition: all 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-banner {
+                font-size: 0.9rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeOut 0.5s 2s forwards;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f0f0f0;
+            border-top-color: var(--primary-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
     </style>
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Banner - Powered by Merlins Group -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <img src="merlinslogo.png" alt="Merlins Group" class="merlins-logo-small">
+            <span>Powered by MERLINS GROUP - Enterprise Automation Solutions</span>
+            <a href="about-merlins.html">Meet the Team →</a>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">
-                <div class="logo-circle">E2</div>
-                <span>Easy2Recruit Portal</span>
+            <div class="logo-section">
+                <img src="e2r.png" alt="Easy2Recruit" class="e2r-logo">
             </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#automation">Automation</a>
-                <a href="#process">Process</a>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <a href="#demo">Watch Demo</a>
+                <a href="#process">How It Works</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="#pricing">Pricing</a>
+                <a href="about-merlins.html">About Merlins</a>
+                <a href="#contact" class="cta-button">Get Portal Access</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
@@ -529,41 +1195,67 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content fade-in">
-                <h1>Revolutionize Your <span>Recruitment</span> Process</h1>
+                <h1>The Future of <span>Recruitment</span> is Fully Automated</h1>
                 <p class="hero-subtitle">
-                    Fully automated portal that streamlines overseas technician recruitment from application to arrival - zero manual work required.
+                    Revolutionary portal technology that eliminates 100% of manual recruitment tasks. 
+                    From candidate sourcing to visa completion - everything happens automatically.
                 </p>
-                <div class="hero-features">
-                    <div class="feature-badge">Automated Screening</div>
-                    <div class="feature-badge">Visa Management</div>
+                
+                <div class="hero-stats">
+                    <div class="stat-mini">
+                        <h3>500+</h3>
+                        <p>Technicians Placed</p>
+                    </div>
+                    <div class="stat-mini">
+                        <h3>4 Weeks</h3>
+                        <p>Average Time to Hire</p>
+                    </div>
+                    <div class="stat-mini">
+                        <h3>100%</h3>
+                        <p>Automated Process</p>
+                    </div>
                 </div>
-                <div style="margin-top: 2rem;">
-                    <a href="#demo" class="cta-button pulse">Request Portal Access</a>
+
+                <div class="hero-buttons">
+                    <a href="#demo" class="cta-button pulse">Watch Portal Demo</a>
+                    <a href="#contact" class="secondary-button">Request Free Trial</a>
                 </div>
             </div>
+            
             <div class="hero-visual">
-                <div class="portal-preview">
-                    <div class="portal-header"></div>
-                    <div class="portal-content">
-                        <div class="portal-item">
-                            <div class="portal-icon">📊</div>
+                <div class="portal-mockup">
+                    <div class="portal-browser">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="portal-screen">
+                        <div class="screen-item">
+                            <div class="screen-icon">📊</div>
                             <div>
-                                <strong>Live Dashboard</strong>
-                                <p style="color: #999; font-size: 0.9rem;">Track applications in real-time</p>
+                                <strong>Live Analytics Dashboard</strong>
+                                <p style="color: #999; font-size: 0.9rem;">247 applications this week</p>
                             </div>
                         </div>
-                        <div class="portal-item">
-                            <div class="portal-icon">🤖</div>
+                        <div class="screen-item">
+                            <div class="screen-icon">🤖</div>
                             <div>
-                                <strong>AI Screening</strong>
-                                <p style="color: #999; font-size: 0.9rem;">Automated candidate matching</p>
+                                <strong>AI Matching Engine</strong>
+                                <p style="color: #999; font-size: 0.9rem;">98% accuracy rate</p>
                             </div>
                         </div>
-                        <div class="portal-item">
-                            <div class="portal-icon">📄</div>
+                        <div class="screen-item">
+                            <div class="screen-icon">✈️</div>
                             <div>
-                                <strong>Document Processing</strong>
-                                <p style="color: #999; font-size: 0.9rem;">Visa & compliance handled</p>
+                                <strong>Visa Processing</strong>
+                                <p style="color: #999; font-size: 0.9rem;">Automated end-to-end</p>
+                            </div>
+                        </div>
+                        <div class="screen-item">
+                            <div class="screen-icon">🏡</div>
+                            <div>
+                                <strong>Relocation Support</strong>
+                                <p style="color: #999; font-size: 0.9rem;">Housing arranged automatically</p>
                             </div>
                         </div>
                     </div>
@@ -572,70 +1264,176 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <h2 class="section-title">Powerful Portal Features</h2>
-        <p class="section-subtitle">Everything automated, nothing manual</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Instant Deployment</h3>
-                <p>Your custom portal goes live in 24 hours. Start receiving and processing applications immediately with zero setup required.</p>
+    <!-- Video Demo Section -->
+    <section id="demo" class="video-section">
+        <div class="video-container">
+            <div class="video-header">
+                <h2>See the Portal in Action</h2>
+                <p>Watch how our automation transforms recruitment in just 3 minutes</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI-Powered Matching</h3>
-                <p>Smart algorithms match candidates to your exact requirements. No more manual CV screening or endless interviews.</p>
+            
+            <div class="video-wrapper">
+                <div class="video-placeholder" onclick="playVideo()">
+                    <div class="play-button"></div>
+                </div>
+                <!-- Video will be embedded here when play is clicked -->
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile-First Design</h3>
-                <p>Candidates apply from anywhere. Responsive interface works perfectly on all devices for maximum reach.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Automated Workflows</h3>
-                <p>From application to arrival, every step is automated. Documents, visas, relocation - all handled by the system.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Real-Time Analytics</h3>
-                <p>Track every metric that matters. Application rates, conversion, time-to-hire - all in your dashboard.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔐</div>
-                <h3>Enterprise Security</h3>
-                <p>Bank-level encryption and GDPR compliance built-in. Your data and candidates' information always protected.</p>
+
+            <div class="video-features">
+                <div class="video-feature">
+                    <div class="video-feature-icon">⚡</div>
+                    <h4>Instant Setup</h4>
+                    <p>Portal goes live in 24 hours</p>
+                </div>
+                <div class="video-feature">
+                    <div class="video-feature-icon">🌍</div>
+                    <h4>Global Reach</h4>
+                    <p>Source from 50+ countries</p>
+                </div>
+                <div class="video-feature">
+                    <div class="video-feature-icon">🔒</div>
+                    <h4>Fully Compliant</h4>
+                    <p>All visa requirements handled</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Automation Section -->
-    <section id="automation" class="automation-section">
-        <div class="automation-container">
-            <h2 class="section-title" style="color: #000;">Complete Automation Journey</h2>
-            <p class="section-subtitle" style="color: #666;">From first contact to first day at work - 100% automated</p>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title">Portal Features That Change Everything</h2>
+        <p class="section-subtitle">Built by Merlins Group - Leaders in Automation Technology</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Zero-Touch Processing</h3>
+                <p>Applications flow through the system without any human intervention. AI handles screening, matching, and decision-making.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Intelligent Matching</h3>
+                <p>Machine learning algorithms match candidates to your exact requirements with 98% accuracy. No more bad hires.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Candidate Mobile App</h3>
+                <p>Branded mobile app for candidates to apply, track progress, and receive updates. Available in 15 languages.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Workflow Automation</h3>
+                <p>Every step from application to arrival is automated. Documents, visas, travel, accommodation - all handled.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Predictive Analytics</h3>
+                <p>Know your hiring pipeline 3 months in advance. AI predicts success rates and timelines with high accuracy.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Talent Pool</h3>
+                <p>Access pre-screened technicians from 50+ countries. All with verified skills and experience.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section id="process" class="process-section">
+        <div class="process-container">
+            <h2 class="section-title">How the Automation Works</h2>
+            <p class="section-subtitle">Every step handled by intelligent systems</p>
             
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Application</h3>
-                    <p class="step-description">Candidates apply through your branded portal. Smart forms capture everything needed.</p>
+                    <h3 class="step-title">Portal Deployment</h3>
+                    <p class="step-description">Your custom branded portal goes live with all automation features activated.</p>
+                    <span class="step-duration">24 hours</span>
                 </div>
+                
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">AI Screening</h3>
-                    <p class="step-description">Automatic skills assessment and matching. Only qualified candidates proceed.</p>
+                    <h3 class="step-title">Candidate Flow</h3>
+                    <p class="step-description">Applications start flowing in. AI screens and matches candidates automatically.</p>
+                    <span class="step-duration">Ongoing</span>
                 </div>
+                
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Documentation</h3>
-                    <p class="step-description">Portal handles all visa applications, sponsor licenses, and compliance documents.</p>
+                    <h3 class="step-title">Auto Documentation</h3>
+                    <p class="step-description">System processes all visa applications and compliance documents without intervention.</p>
+                    <span class="step-duration">2-3 weeks</span>
                 </div>
+                
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Onboarding</h3>
-                    <p class="step-description">Automated relocation support, accommodation setup, and welcome process.</p>
+                    <h3 class="step-title">Arrival & Start</h3>
+                    <p class="step-description">Relocation handled, accommodation arranged, technician starts work.</p>
+                    <span class="step-duration">Week 4-6</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="section-title" style="color: white;">Success Stories</h2>
+            <p class="section-subtitle" style="color: #999;">Garages thriving with our automated portal</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The portal changed everything for us. We went from spending 40 hours a week on recruitment to zero. 
+                        It just runs itself and delivers qualified technicians."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>John Mitchell</h4>
+                            <p>Midlands Auto Group</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "We've hired 12 HGV technicians through the portal in 3 months. The automation is incredible - 
+                        we literally don't touch anything until they arrive."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <h4>Sarah Clarke</h4>
+                            <p>Northshire Commercials</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The AI matching is spot on. Every technician has been exactly what we needed. 
+                        The portal knows our requirements better than we do!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RP</div>
+                        <div class="author-info">
+                            <h4>Robert Price</h4>
+                            <p>Elite Bodyshop Ltd</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -644,21 +1442,91 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="stats-container">
-            <div class="stat-item">
-                <h3>87%</h3>
-                <p>Time Saved vs Manual</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Technicians Placed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>87%</h3>
+                    <p>Time Saved</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Visa Success</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4 weeks</h3>
+                    <p>Average Placement</p>
+                </div>
             </div>
-            <div class="stat-item">
-                <h3>4-6 weeks</h3>
-                <p>Average Time to Hire</p>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="integration-section">
+        <div class="process-container">
+            <h2 class="section-title">Seamless Integrations</h2>
+            <p class="section-subtitle">Works with your existing systems</p>
+            
+            <div class="integration-logos">
+                <div class="integration-logo">HRMS</div>
+                <div class="integration-logo">Payroll</div>
+                <div class="integration-logo">Compliance</div>
+                <div class="integration-logo">Calendar</div>
+                <div class="integration-logo">Email</div>
             </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Visa Success Rate</p>
-            </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Portal Availability</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">No hidden fees, no surprises</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-plan">Starter Portal</h3>
+                    <div class="pricing-price">£499<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Up to 10 hires per month</li>
+                        <li>Basic automation features</li>
+                        <li>Standard support</li>
+                        <li>1 user account</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3 class="pricing-plan">Professional Portal</h3>
+                    <div class="pricing-price">£999<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Unlimited hires</li>
+                        <li>Full automation suite</li>
+                        <li>Priority support 24/7</li>
+                        <li>Unlimited users</li>
+                        <li>Advanced analytics & AI</li>
+                        <li>Custom branding</li>
+                        <li>Mobile app included</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-plan">Enterprise Portal</h3>
+                    <div class="pricing-price">Custom</div>
+                    <ul class="pricing-features">
+                        <li>Multi-location support</li>
+                        <li>Custom workflows</li>
+                        <li>Dedicated success manager</li>
+                        <li>API access</li>
+                        <li>Custom integrations</li>
+                        <li>White-label options</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Sales</a>
+                </div>
             </div>
         </div>
     </section>
@@ -666,11 +1534,12 @@
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="cta-content">
-            <h2>Ready to Transform Your Recruitment?</h2>
-            <p>Join forward-thinking garages using our automated portal</p>
+            <h2>Transform Your Recruitment Today</h2>
+            <p>Join 150+ garages already using our automated portal to solve their technician shortage. 
+               Setup takes 24 hours. Results last forever.</p>
             <div class="cta-buttons">
-                <a href="#" class="cta-button">Get Portal Demo</a>
-                <a href="#" class="secondary-button">Download Portal Guide</a>
+                <a href="#" class="cta-button pulse">Request Portal Demo</a>
+                <a href="#" class="secondary-button" style="background: transparent; color: white; border: 2px solid white;">Download Portal Guide</a>
             </div>
         </div>
     </section>
@@ -678,10 +1547,60 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2025 Easy2Recruit. All rights reserved.</p>
-            <div class="powered-by">
-                <p>Powered by <a href="#">Merlins Group</a> - Automation Excellence</p>
-                <p style="margin-top: 0.5rem;">Under Merlins Group - <a href="#">Please Get In Touch</a></p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Portal Features</h3>
+                    <ul>
+                        <li><a href="#">Automation Engine</a></li>
+                        <li><a href="#">AI Matching</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Analytics Dashboard</a></li>
+                        <li><a href="#">Visa Processing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Portal Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Integration Guides</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Support Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-merlins.html">About Merlins Group</a></li>
+                        <li><a href="about-merlins.html#team">Meet the Team</a></li>
+                        <li><a href="#">Our Technology</a></li>
+                        <li><a href="#">Partner Program</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">support@easy2recruit.com</a></li>
+                        <li><a href="#">0800 123 4567</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Easy2Recruit. All rights reserved. | Privacy Policy | Terms of Service</p>
+                
+                <div class="merlins-credit">
+                    <h4>🚀 Powered by Merlins Group</h4>
+                    <p>Enterprise automation solutions that transform businesses</p>
+                    <a href="about-merlins.html">Learn About Merlins Group →</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -691,13 +1610,31 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href'))?.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add animation on scroll
+        // Play video function
+        function playVideo() {
+            const wrapper = document.querySelector('.video-wrapper');
+            wrapper.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            `;
+        }
+
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -706,14 +1643,76 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 1s ease-in';
+                    entry.target.style.animation = 'fadeIn 1s ease-in forwards';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .process-step').forEach(el => {
+        // Observe elements
+        document.querySelectorAll('.feature-card, .process-step, .testimonial-card, .pricing-card').forEach(el => {
             observer.observe(el);
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('.header');
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.dataset.suffix || '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (element.dataset.suffix || '');
+                }
+            }, 30);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-item h3');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        if (number) {
+                            stat.dataset.suffix = text.replace(/[0-9]/g, '');
+                            animateCounter(stat, number);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>
