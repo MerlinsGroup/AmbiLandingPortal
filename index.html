@@ -18,6 +18,8 @@
             --dark-gray: #111111;
             --light-gray: #f5f5f5;
             --white: #ffffff;
+            --merlins-blue: #2B4C8C;
+            --merlins-dark-blue: #1A2F59;
         }
 
         body {
@@ -29,7 +31,7 @@
 
         /* Top Banner - Powered by Merlins */
         .top-banner {
-            background: linear-gradient(90deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            background: linear-gradient(90deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             color: white;
             padding: 0.75rem 0;
             text-align: center;
@@ -38,7 +40,7 @@
             width: 100%;
             top: 0;
             z-index: 1001;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(43,76,140,0.3);
         }
 
         .top-banner a {
@@ -112,8 +114,17 @@
             position: relative;
         }
 
+        .nav-links a[href="about-merlins.html"] {
+            color: var(--merlins-blue);
+            font-weight: bold;
+        }
+
         .nav-links a:hover {
             color: var(--primary-red);
+        }
+
+        .nav-links a[href="about-merlins.html"]:hover {
+            color: var(--merlins-dark-blue);
         }
 
         .nav-links a::after {
@@ -1001,35 +1012,38 @@
         .merlins-credit {
             margin-top: 2rem;
             padding: 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            background: linear-gradient(135deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             border-radius: 20px;
-            border: 2px solid var(--primary-red);
+            border: 2px solid var(--merlins-blue);
+            box-shadow: 0 10px 30px rgba(43,76,140,0.2);
         }
 
         .merlins-credit h4 {
-            color: var(--primary-red);
+            color: white;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
 
         .merlins-credit p {
-            color: #999;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 1rem;
         }
 
         .merlins-credit a {
-            color: white;
-            background: var(--primary-red);
+            color: var(--merlins-blue);
+            background: white;
             padding: 0.5rem 1.5rem;
             border-radius: 20px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s;
+            font-weight: bold;
         }
 
         .merlins-credit a:hover {
-            background: var(--dark-red);
+            background: rgba(255,255,255,0.9);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         /* Animations */
@@ -1162,9 +1176,9 @@
     <!-- Top Banner - Powered by Merlins Group -->
     <div class="top-banner">
         <div class="banner-content">
-            <img src="merlinslogo.png" alt="Merlins Group" class="merlins-logo-small">
-            <span>Powered by MERLINS GROUP - Enterprise Automation Solutions</span>
-            <a href="about-merlins.html">Meet the Team →</a>
+            <img src="merlinsgroup.png" alt="Merlins Group" class="merlins-logo-small">
+            <span style="color: white; font-weight: bold;">Powered by MERLINS GROUP - Enterprise Automation Solutions</span>
+            <a href="about-merlins.html" style="color: white;">Meet the Team →</a>
         </div>
     </div>
 
@@ -1175,13 +1189,13 @@
                 <img src="e2r.png" alt="Easy2Recruit" class="e2r-logo">
             </div>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#demo">Watch Demo</a>
-                <a href="#process">How It Works</a>
+                <a href="#features">Why Choose Us</a>
+                <a href="#demo">How It Works</a>
+                <a href="#process">The Process</a>
                 <a href="#testimonials">Success Stories</a>
-                <a href="#pricing">Pricing</a>
+                <a href="#pricing">No Upfront Fees</a>
                 <a href="about-merlins.html">About Merlins</a>
-                <a href="#contact" class="cta-button">Get Portal Access</a>
+                <a href="#contact" class="cta-button">Book Discovery Call</a>
             </div>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -1195,10 +1209,10 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content fade-in">
-                <h1>The Future of <span>Recruitment</span> is Fully Automated</h1>
+                <h1>Get Skilled <span>Technicians</span> in 4-6 Weeks</h1>
                 <p class="hero-subtitle">
-                    Revolutionary portal technology that eliminates 100% of manual recruitment tasks. 
-                    From candidate sourcing to visa completion - everything happens automatically.
+                    Stop leaving ramps empty. Easy2Recruit's revolutionary automated system finds, screens, and delivers 
+                    qualified overseas technicians to your workshop. Visas handled. Relocation sorted. No upfront fees.
                 </p>
                 
                 <div class="hero-stats">
@@ -1208,17 +1222,17 @@
                     </div>
                     <div class="stat-mini">
                         <h3>4 Weeks</h3>
-                        <p>Average Time to Hire</p>
+                        <p>Fastest Placement</p>
                     </div>
                     <div class="stat-mini">
-                        <h3>100%</h3>
-                        <p>Automated Process</p>
+                        <h3>£0</h3>
+                        <p>Upfront Cost</p>
                     </div>
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#demo" class="cta-button pulse">Watch Portal Demo</a>
-                    <a href="#contact" class="secondary-button">Request Free Trial</a>
+                    <a href="#demo" class="cta-button pulse">Watch How It Works</a>
+                    <a href="#contact" class="secondary-button">Book Discovery Call</a>
                 </div>
             </div>
             
@@ -1231,31 +1245,31 @@
                     </div>
                     <div class="portal-screen">
                         <div class="screen-item">
-                            <div class="screen-icon">📊</div>
+                            <div class="screen-icon">🔧</div>
                             <div>
-                                <strong>Live Analytics Dashboard</strong>
-                                <p style="color: #999; font-size: 0.9rem;">247 applications this week</p>
+                                <strong>Vehicle Technicians</strong>
+                                <p style="color: #999; font-size: 0.9rem;">MOT testers, diagnosticians</p>
                             </div>
                         </div>
                         <div class="screen-item">
-                            <div class="screen-icon">🤖</div>
+                            <div class="screen-icon">🚛</div>
                             <div>
-                                <strong>AI Matching Engine</strong>
-                                <p style="color: #999; font-size: 0.9rem;">98% accuracy rate</p>
+                                <strong>HGV Specialists</strong>
+                                <p style="color: #999; font-size: 0.9rem;">Commercial vehicle experts</p>
                             </div>
                         </div>
                         <div class="screen-item">
-                            <div class="screen-icon">✈️</div>
+                            <div class="screen-icon">🎨</div>
                             <div>
-                                <strong>Visa Processing</strong>
-                                <p style="color: #999; font-size: 0.9rem;">Automated end-to-end</p>
+                                <strong>Bodyshop Staff</strong>
+                                <p style="color: #999; font-size: 0.9rem;">Paint sprayers, panel beaters</p>
                             </div>
                         </div>
                         <div class="screen-item">
-                            <div class="screen-icon">🏡</div>
+                            <div class="screen-icon">⚡</div>
                             <div>
-                                <strong>Relocation Support</strong>
-                                <p style="color: #999; font-size: 0.9rem;">Housing arranged automatically</p>
+                                <strong>EV Technicians</strong>
+                                <p style="color: #999; font-size: 0.9rem;">Electric vehicle specialists</p>
                             </div>
                         </div>
                     </div>
@@ -1268,8 +1282,8 @@
     <section id="demo" class="video-section">
         <div class="video-container">
             <div class="video-header">
-                <h2>See the Portal in Action</h2>
-                <p>Watch how our automation transforms recruitment in just 3 minutes</p>
+                <h2>See How We Fill Your Empty Bays</h2>
+                <p>Watch how our automated system delivers qualified technicians in just 4-6 weeks</p>
             </div>
             
             <div class="video-wrapper">
@@ -1281,19 +1295,19 @@
 
             <div class="video-features">
                 <div class="video-feature">
-                    <div class="video-feature-icon">⚡</div>
-                    <h4>Instant Setup</h4>
-                    <p>Portal goes live in 24 hours</p>
-                </div>
-                <div class="video-feature">
                     <div class="video-feature-icon">🌍</div>
-                    <h4>Global Reach</h4>
-                    <p>Source from 50+ countries</p>
+                    <h4>Global Talent Pool</h4>
+                    <p>Access to 10,000+ pre-screened technicians</p>
                 </div>
                 <div class="video-feature">
-                    <div class="video-feature-icon">🔒</div>
-                    <h4>Fully Compliant</h4>
-                    <p>All visa requirements handled</p>
+                    <div class="video-feature-icon">✓</div>
+                    <h4>Skills Verified</h4>
+                    <p>Every candidate tested and certified</p>
+                </div>
+                <div class="video-feature">
+                    <div class="video-feature-icon">📄</div>
+                    <h4>Zero Paperwork</h4>
+                    <p>We handle all visa and compliance</p>
                 </div>
             </div>
         </div>
@@ -1301,49 +1315,49 @@
 
     <!-- Features Section -->
     <section id="features" class="features-section">
-        <h2 class="section-title">Portal Features That Change Everything</h2>
-        <p class="section-subtitle">Built by Merlins Group - Leaders in Automation Technology</p>
+        <h2 class="section-title">Why Garages Choose Easy2Recruit</h2>
+        <p class="section-subtitle">Powered by <span style="color: var(--merlins-blue); font-weight: bold;">Merlins Group's</span> revolutionary automation technology</p>
         
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Zero-Touch Processing</h3>
-                <p>Applications flow through the system without any human intervention. AI handles screening, matching, and decision-making.</p>
+                <div class="feature-icon">💰</div>
+                <h3>No Upfront Costs</h3>
+                <p>Zero fees until your technician starts working. No placement, no fee. It's that simple. We're so confident in our system, we only get paid on success.</p>
                 <a href="#" class="feature-link">Learn more →</a>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3>Intelligent Matching</h3>
-                <p>Machine learning algorithms match candidates to your exact requirements with 98% accuracy. No more bad hires.</p>
+                <div class="feature-icon">⚡</div>
+                <h3>4-6 Week Placements</h3>
+                <p>While others take months, our automated system delivers qualified technicians in weeks. Your empty bays start generating revenue fast.</p>
                 <a href="#" class="feature-link">Learn more →</a>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Candidate Mobile App</h3>
-                <p>Branded mobile app for candidates to apply, track progress, and receive updates. Available in 15 languages.</p>
+                <div class="feature-icon">🎯</div>
+                <h3>Pre-Screened & Tested</h3>
+                <p>Every candidate is skills-tested, reference-checked, and verified before you even hear about them. No time wasted on unsuitable applicants.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Complete Visa Handling</h3>
+                <p>Sponsor licenses, visa applications, compliance documents - we handle everything. You don't touch a single form or worry about regulations.</p>
+                <a href="#" class="feature-link">Learn more →</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🏡</div>
+                <h3>Relocation Support</h3>
+                <p>We arrange accommodation, transport, and settling-in support. Your new technicians arrive ready to work from day one.</p>
                 <a href="#" class="feature-link">Learn more →</a>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">🔄</div>
-                <h3>Workflow Automation</h3>
-                <p>Every step from application to arrival is automated. Documents, visas, travel, accommodation - all handled.</p>
-                <a href="#" class="feature-link">Learn more →</a>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Predictive Analytics</h3>
-                <p>Know your hiring pipeline 3 months in advance. AI predicts success rates and timelines with high accuracy.</p>
-                <a href="#" class="feature-link">Learn more →</a>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Global Talent Pool</h3>
-                <p>Access pre-screened technicians from 50+ countries. All with verified skills and experience.</p>
+                <h3>12-Month Guarantee</h3>
+                <p>If a placement doesn't work out, we'll replace them free of charge. Our 94% retention rate means this rarely happens.</p>
                 <a href="#" class="feature-link">Learn more →</a>
             </div>
         </div>
@@ -1352,37 +1366,83 @@
     <!-- Process Timeline -->
     <section id="process" class="process-section">
         <div class="process-container">
-            <h2 class="section-title">How the Automation Works</h2>
-            <p class="section-subtitle">Every step handled by intelligent systems</p>
+            <h2 class="section-title">Your Journey to Fully Staffed</h2>
+            <p class="section-subtitle">From empty bays to productive workshop in 4-6 weeks</p>
             
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Portal Deployment</h3>
-                    <p class="step-description">Your custom branded portal goes live with all automation features activated.</p>
-                    <span class="step-duration">24 hours</span>
+                    <h3 class="step-title">Discovery Call</h3>
+                    <p class="step-description">Tell us your exact needs - skills, experience, salary expectations. We'll confirm we can help.</p>
+                    <span class="step-duration">Day 1</span>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Candidate Flow</h3>
-                    <p class="step-description">Applications start flowing in. AI screens and matches candidates automatically.</p>
-                    <span class="step-duration">Ongoing</span>
+                    <h3 class="step-title">We Find Your Technicians</h3>
+                    <p class="step-description">Our AI-powered system searches globally, screens candidates, and verifies skills - all automatically.</p>
+                    <span class="step-duration">Week 1-2</span>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Auto Documentation</h3>
-                    <p class="step-description">System processes all visa applications and compliance documents without intervention.</p>
-                    <span class="step-duration">2-3 weeks</span>
+                    <h3 class="step-title">Visa & Documentation</h3>
+                    <p class="step-description">We handle sponsor licenses, visa applications, and all compliance. You don't touch any paperwork.</p>
+                    <span class="step-duration">Week 2-4</span>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Arrival & Start</h3>
-                    <p class="step-description">Relocation handled, accommodation arranged, technician starts work.</p>
+                    <h3 class="step-title">Technician Starts Work</h3>
+                    <p class="step-description">Your new team member arrives, accommodation sorted, ready to work. You pay our success fee.</p>
                     <span class="step-duration">Week 4-6</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section style="padding: 100px 0; background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 1rem; color: #000;">Sound Familiar?</h2>
+            <p style="text-align: center; color: #666; font-size: 1.3rem; margin-bottom: 4rem;">These are the problems killing UK garages right now</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Empty Bays = Lost Revenue</h3>
+                    <p style="color: #666; line-height: 1.8;">Every empty ramp costs you £2,000+ per week. With 3 empty bays, you're losing £300,000+ annually. Your competitors are taking your customers.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Can't Find Local Technicians</h3>
+                    <p style="color: #666; line-height: 1.8;">The UK has 30,000 fewer technicians than needed. Everyone's fighting for the same people. Wages are skyrocketing, but you still can't fill positions.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Agencies Charge Fortune</h3>
+                    <p style="color: #666; line-height: 1.8;">Traditional agencies want £3,000-£5,000 upfront per placement. No guarantee they'll stay. You're gambling thousands on each hire.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Visa Process is Nightmare</h3>
+                    <p style="color: #666; line-height: 1.8;">Sponsor licenses, visa applications, compliance rules - it's overwhelming. One mistake and you face huge fines. Most garages don't even try.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Team is Burning Out</h3>
+                    <p style="color: #666; line-height: 1.8;">Your existing technicians are overworked. They're doing 60+ hour weeks. Quality is dropping. Your best people are thinking about leaving.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 20px; border-left: 5px solid #FF3333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #FF3333; margin-bottom: 1rem;">❌ Turning Away Business</h3>
+                    <p style="color: #666; line-height: 1.8;">You're saying no to fleet contracts. Booking times are 3+ weeks out. Customers are going elsewhere. Your reputation is suffering.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: #000; border-radius: 20px;">
+                <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem;">We Solve ALL of This</h3>
+                <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 2rem;">Easy2Recruit's automated system eliminates every one of these problems</p>
+                <a href="#contact" style="background: #FF3333; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">Fix Your Staffing Crisis Now →</a>
             </div>
         </div>
     </section>
@@ -1463,69 +1523,94 @@
         </div>
     </section>
 
-    <!-- Integration Section -->
+    <!-- Technician Types Section -->
     <section class="integration-section">
         <div class="process-container">
-            <h2 class="section-title">Seamless Integrations</h2>
-            <p class="section-subtitle">Works with your existing systems</p>
+            <h2 class="section-title">Technicians We Provide</h2>
+            <p class="section-subtitle">Skilled professionals for every workshop need</p>
             
-            <div class="integration-logos">
-                <div class="integration-logo">HRMS</div>
-                <div class="integration-logo">Payroll</div>
-                <div class="integration-logo">Compliance</div>
-                <div class="integration-logo">Calendar</div>
-                <div class="integration-logo">Email</div>
+            <div class="integration-logos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 3rem auto 0;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">Vehicle Technicians</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Service, MOT, diagnostics</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚛</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">HGV Technicians</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Commercial vehicle experts</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">Bodyshop Staff</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Panel beaters, paint sprayers</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">EV Specialists</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Electric & hybrid certified</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏎️</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">Specialist Techs</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Prestige & performance</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔩</div>
+                    <h4 style="color: var(--pure-black); margin-bottom: 0.5rem;">Parts Advisors</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Parts & inventory experts</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- How We Work Section -->
     <section id="pricing" class="pricing-section">
         <div class="pricing-container">
-            <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <p class="section-subtitle">No hidden fees, no surprises</p>
+            <h2 class="section-title">How Easy2Recruit Works For You</h2>
+            <p class="section-subtitle">No upfront costs - You only pay when technicians start working</p>
             
             <div class="pricing-cards">
                 <div class="pricing-card">
-                    <h3 class="pricing-plan">Starter Portal</h3>
-                    <div class="pricing-price">£499<span>/month</span></div>
+                    <h3 class="pricing-plan">Discovery Call</h3>
+                    <div class="pricing-price">FREE</div>
                     <ul class="pricing-features">
-                        <li>Up to 10 hires per month</li>
-                        <li>Basic automation features</li>
-                        <li>Standard support</li>
-                        <li>1 user account</li>
-                        <li>Basic analytics</li>
+                        <li>Understand your exact needs</li>
+                        <li>Discuss skill requirements</li>
+                        <li>Review salary expectations</li>
+                        <li>Timeline assessment</li>
+                        <li>No obligation consultation</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#contact" class="cta-button">Book Your Call</a>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <h3 class="pricing-plan">Professional Portal</h3>
-                    <div class="pricing-price">£999<span>/month</span></div>
+                    <h3 class="pricing-plan">We Find & Place</h3>
+                    <div class="pricing-price">NO UPFRONT FEE</div>
                     <ul class="pricing-features">
-                        <li>Unlimited hires</li>
-                        <li>Full automation suite</li>
-                        <li>Priority support 24/7</li>
-                        <li>Unlimited users</li>
-                        <li>Advanced analytics & AI</li>
-                        <li>Custom branding</li>
-                        <li>Mobile app included</li>
+                        <li>Access global talent pool</li>
+                        <li>AI-powered candidate matching</li>
+                        <li>Skills verification & testing</li>
+                        <li>Complete visa handling</li>
+                        <li>Relocation support included</li>
+                        <li>4-6 week placement</li>
+                        <li>100% managed process</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#contact" class="cta-button">Start Hiring</a>
                 </div>
                 
                 <div class="pricing-card">
-                    <h3 class="pricing-plan">Enterprise Portal</h3>
-                    <div class="pricing-price">Custom</div>
+                    <h3 class="pricing-plan">Success Fee Only</h3>
+                    <div class="pricing-price">Pay on Arrival</div>
                     <ul class="pricing-features">
-                        <li>Multi-location support</li>
-                        <li>Custom workflows</li>
-                        <li>Dedicated success manager</li>
-                        <li>API access</li>
-                        <li>Custom integrations</li>
-                        <li>White-label options</li>
+                        <li>No placement, no fee</li>
+                        <li>Competitive success fee</li>
+                        <li>12-month guarantee</li>
+                        <li>Ongoing support included</li>
+                        <li>Replace if needed</li>
+                        <li>Volume discounts available</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Contact Sales</a>
+                    <a href="#contact" class="cta-button">Learn More</a>
                 </div>
             </div>
         </div>
@@ -1534,12 +1619,12 @@
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="cta-content">
-            <h2>Transform Your Recruitment Today</h2>
-            <p>Join 150+ garages already using our automated portal to solve their technician shortage. 
-               Setup takes 24 hours. Results last forever.</p>
+            <h2>Stop Losing Money on Empty Bays</h2>
+            <p>Every empty ramp costs you £2,000+ per week. Join 150+ UK garages who've solved their technician shortage 
+               with Easy2Recruit. No upfront fees. Technicians working in 4-6 weeks.</p>
             <div class="cta-buttons">
-                <a href="#" class="cta-button pulse">Request Portal Demo</a>
-                <a href="#" class="secondary-button" style="background: transparent; color: white; border: 2px solid white;">Download Portal Guide</a>
+                <a href="#" class="cta-button pulse">Book Your Discovery Call</a>
+                <a href="#" class="secondary-button" style="background: transparent; color: white; border: 2px solid white;">Download Success Stories</a>
             </div>
         </div>
     </section>
@@ -1549,46 +1634,46 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>Portal Features</h3>
+                    <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#">Automation Engine</a></li>
-                        <li><a href="#">AI Matching</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">Analytics Dashboard</a></li>
-                        <li><a href="#">Visa Processing</a></li>
+                        <li><a href="#">Vehicle Technicians</a></li>
+                        <li><a href="#">HGV Specialists</a></li>
+                        <li><a href="#">Bodyshop Staff</a></li>
+                        <li><a href="#">EV Technicians</a></li>
+                        <li><a href="#">Emergency Cover</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Resources</h3>
+                    <h3>For Garages</h3>
                     <ul>
-                        <li><a href="#">Portal Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Integration Guides</a></li>
+                        <li><a href="#">Book Discovery Call</a></li>
                         <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">No Upfront Fees</a></li>
+                        <li><a href="#">12-Month Guarantee</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="about-merlins.html">About Merlins Group</a></li>
-                        <li><a href="about-merlins.html#team">Meet the Team</a></li>
+                        <li><a href="about-merlins.html" style="color: #7DA5E0;">About Merlins Group</a></li>
+                        <li><a href="about-merlins.html#team" style="color: #7DA5E0;">Our Team</a></li>
                         <li><a href="#">Our Technology</a></li>
-                        <li><a href="#">Partner Program</a></li>
+                        <li><a href="#">Industry Partners</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Connect</h3>
+                    <h3>Get Started</h3>
                     <ul>
+                        <li><a href="#">📞 0800 123 4567</a></li>
+                        <li><a href="#">💬 WhatsApp Us</a></li>
+                        <li><a href="#">📧 hello@easy2recruit.com</a></li>
+                        <li><a href="#">📅 Book a Call</a></li>
                         <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">YouTube</a></li>
-                        <li><a href="#">support@easy2recruit.com</a></li>
-                        <li><a href="#">0800 123 4567</a></li>
                     </ul>
                 </div>
             </div>
@@ -1597,8 +1682,8 @@
                 <p>&copy; 2025 Easy2Recruit. All rights reserved. | Privacy Policy | Terms of Service</p>
                 
                 <div class="merlins-credit">
-                    <h4>🚀 Powered by Merlins Group</h4>
-                    <p>Enterprise automation solutions that transform businesses</p>
+                    <h4>🧙‍♂️ Powered by Merlins Group</h4>
+                    <p>Revolutionary automation technology that makes overseas recruitment effortless</p>
                     <a href="about-merlins.html">Learn About Merlins Group →</a>
                 </div>
             </div>
