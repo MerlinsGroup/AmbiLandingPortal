@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Merlins Group - The Minds Behind Easy2Recruit Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #FF3333;
+            --dark-red: #cc0000;
+            --pure-black: #000000;
+            --dark-gray: #111111;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background: var(--pure-black);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .merlins-logo {
+            height: 50px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .back-button {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--pure-black) 0%, #1a1a1a 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #999;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            background: rgba(255,51,51,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,51,51,0.3);
+        }
+
+        .hero-stat h3 {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat p {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--pure-black);
+        }
+
+        .story-content h2 span {
+            color: var(--primary-red);
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-image {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255,51,51,0.2);
+        }
+
+        .story-image h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-image p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--pure-black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255,51,51,0.2);
+        }
+
+        .member-image {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-image::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .member-initials {
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .member-info {
+            padding: 2rem;
+        }
+
+        .member-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--pure-black);
+        }
+
+        .member-role {
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .member-link {
+            background: var(--pure-black);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .member-link:hover {
+            background: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+            background: var(--pure-black);
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 40px rgba(255,51,51,0.2);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-red);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .value-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* Technology Section */
+        .tech-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-item {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .tech-item h4 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .achievements-container h2 {
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .achievement-card h3 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--pure-black);
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--pure-black);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-section">
+                <img src="merlinslogo.png" alt="Merlins Group" class="merlins-logo">
+                <span class="logo-text">MERLINS GROUP</span>
+            </div>
+            <div class="nav-links">
+                <a href="#team">Our Team</a>
+                <a href="#values">Our Values</a>
+                <a href="#technology">Technology</a>
+                <a href="#contact">Contact</a>
+                <a href="index.html" class="back-button">Back to Easy2Recruit</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Meet <span>Merlins Group</span></h1>
+            <p class="hero-subtitle">
+                The innovation powerhouse behind Easy2Recruit's revolutionary automation portal. 
+                We transform complex business processes into seamless automated experiences.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>2019</h3>
+                    <p>Founded</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>50+</h3>
+                    <p>Enterprise Clients</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>£10M+</h3>
+                    <p>Saved for Clients</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>100%</h3>
+                    <p>Automation Focus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-grid">
+                <div class="story-content slide-in-left">
+                    <h2>Our <span>Story</span></h2>
+                    <p>
+                        Merlins Group was born from a simple observation: businesses were drowning in manual processes 
+                        that technology could easily automate. Founded by Prabjot Kandola and Santokh Singh, two 
+                        veterans of enterprise software, we set out to change how companies operate.
+                    </p>
+                    <p>
+                        What started as a consultancy quickly evolved into a technology powerhouse. We don't just 
+                        advise on automation – we build it, deploy it, and ensure it transforms your business.
+                    </p>
+                    <p>
+                        The Easy2Recruit portal represents everything we stand for: taking a complex, manual, 
+                        time-consuming process and making it completely automated, intelligent, and effortless.
+                    </p>
+                </div>
+                
+                <div class="story-image slide-in-right">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To eliminate manual work from business processes, allowing companies to focus on growth, 
+                        innovation, and what truly matters – their customers and their people.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <h2 class="section-title">The Visionaries Behind Merlins Group</h2>
+        <p class="section-subtitle">Meet the minds transforming recruitment automation</p>
+        
+        <div class="team-grid">
+            <div class="team-member fade-in" onclick="expandMember(this)">
+                <div class="member-image">
+                    <span class="member-initials">PK</span>
+                </div>
+                <div class="member-info">
+                    <h3>Prabjot Kandola</h3>
+                    <p class="member-role">Co-Founder & CEO</p>
+                    <p class="member-bio">
+                        Visionary entrepreneur with 15+ years in enterprise automation. Prabjot has led digital 
+                        transformation projects for Fortune 500 companies and pioneered AI-driven recruitment 
+                        solutions. His philosophy: "If a human is doing repetitive work, we've failed."
+                    </p>
+                    <div class="member-links">
+                        <a href="#" class="member-link">LinkedIn</a>
+                        <a href="#" class="member-link">Email</a>
+                        <a href="#" class="member-link">Profile</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member fade-in" onclick="expandMember(this)">
+                <div class="member-image">
+                    <span class="member-initials">SS</span>
+                </div>
+                <div class="member-info">
+                    <h3>Santokh Singh</h3>
+                    <p class="member-role">Co-Founder & CTO</p>
+                    <p class="member-bio">
+                        Technical genius with a track record of building scalable automation platforms. Santokh 
+                        has architected systems processing millions of transactions daily. He believes technology 
+                        should be invisible – working perfectly in the background.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" class="member-link">LinkedIn</a>
+                        <a href="#" class="member-link">Email</a>
+                        <a href="#" class="member-link">Profile</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member fade-in" onclick="expandMember(this)">
+                <div class="member-image">
+                    <span class="member-initials">AS</span>
+                </div>
+                <div class="member-info">
+                    <h3>Ambi Singh</h3>
+                    <p class="member-role">Head of Strategy - Easy2Recruit</p>
+                    <p class="member-bio">
+                        International workforce strategist and the face of Easy2Recruit. Ambi has placed over 
+                        500 technicians and speaks regularly at industry events about solving the skills shortage 
+                        through intelligent automation.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" class="member-link">LinkedIn</a>
+                        <a href="#" class="member-link">Email</a>
+                        <a href="#" class="member-link">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="values-section">
+        <div class="values-container">
+            <h2 class="section-title" style="color: white;">Our Core Values</h2>
+            <p class="section-subtitle" style="color: #999;">The principles that drive everything we build</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation First</h3>
+                    <p>We don't follow trends – we create them. Every solution pushes the boundaries of what's possible.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Speed Matters</h3>
+                    <p>Time is money. Our automation saves thousands of hours for every client, every year.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Results Focused</h3>
+                    <p>We measure success by one metric: how much manual work we've eliminated from your business.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Trust & Security</h3>
+                    <p>Bank-level security isn't optional. Every system we build is fortress-strong and fully compliant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="tech-section">
+        <div class="tech-container">
+            <h2 class="section-title">Our Technology Stack</h2>
+            <p class="section-subtitle">Enterprise-grade tools powering next-generation automation</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4>AI/ML</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>Cloud Native</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>Microservices</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>Kubernetes</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>React/Node</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>Python</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>PostgreSQL</h4>
+                </div>
+                <div class="tech-item">
+                    <h4>Redis</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="achievements-container">
+            <h2 class="section-title" style="color: white;">Our Impact in Numbers</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3>1M+</h3>
+                    <p>Processes Automated</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>99.9%</h3>
+                    <p>Uptime Guaranteed</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>24hr</h3>
+                    <p>Deployment Time</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>87%</h3>
+                    <p>Cost Reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch With Merlins Group</h2>
+            <p class="section-subtitle">Ready to transform your business with automation?</p>
+            
+            <div class="contact-info">
+                <h3>Let's Build Something Amazing Together</h3>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <span class="contact-icon">📧</span>
+                        <span>hello@merlinsgroup.com</span>
+                    </div>
+                    <div class="contact-method">
+                        <span class="contact-icon">📱</span>
+                        <span>+44 20 7123 4567</span>
+                    </div>
+                    <div class="contact-method">
+                        <span class="contact-icon">🏢</span>
+                        <span>London, United Kingdom</span>
+                    </div>
+                    <div class="contact-method">
+                        <span class="contact-icon">💼</span>
+                        <span>LinkedIn: /company/merlinsgroup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Merlins Group. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Easy2Recruit Portal</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Expand team member
+        function expandMember(element) {
+            // Could add modal or expansion functionality here
+            console.log('Member clicked:', element);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.team-member, .value-card, .achievement-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0,0,0,0.95)';
+            } else {
+                header.style.background = 'var(--pure-black)';
+            }
+        });
+    </script>
+</body>
+</html>
