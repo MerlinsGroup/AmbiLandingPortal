@@ -18,6 +18,8 @@
             --dark-gray: #111111;
             --light-gray: #f5f5f5;
             --white: #ffffff;
+            --merlins-blue: #2B4C8C;
+            --merlins-dark-blue: #1A2F59;
         }
 
         body {
@@ -29,13 +31,13 @@
 
         /* Header */
         .header {
-            background: var(--pure-black);
+            background: linear-gradient(90deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 20px rgba(43,76,140,0.3);
         }
 
         .nav-container {
@@ -97,7 +99,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--pure-black) 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
@@ -110,7 +112,7 @@
             right: -20%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -131,7 +133,8 @@
         }
 
         .hero h1 span {
-            color: var(--primary-red);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
@@ -149,20 +152,22 @@
         }
 
         .hero-stat {
-            background: rgba(255,51,51,0.1);
+            background: rgba(255,255,255,0.1);
             padding: 2rem;
             border-radius: 20px;
-            border: 1px solid rgba(255,51,51,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
         }
 
         .hero-stat h3 {
             font-size: 3rem;
-            color: var(--primary-red);
+            color: white;
             margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
         .hero-stat p {
-            color: white;
+            color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
         }
 
@@ -193,7 +198,7 @@
         }
 
         .story-content h2 span {
-            color: var(--primary-red);
+            color: var(--merlins-blue);
         }
 
         .story-content p {
@@ -205,11 +210,11 @@
 
         .story-image {
             position: relative;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            background: linear-gradient(135deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             border-radius: 20px;
             padding: 3rem;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(255,51,51,0.2);
+            box-shadow: 0 20px 60px rgba(43,76,140,0.2);
         }
 
         .story-image h3 {
@@ -263,12 +268,12 @@
 
         .team-member:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(255,51,51,0.2);
+            box-shadow: 0 20px 60px rgba(43,76,140,0.2);
         }
 
         .member-image {
             height: 300px;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            background: linear-gradient(135deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -304,7 +309,7 @@
         }
 
         .member-role {
-            color: var(--primary-red);
+            color: var(--merlins-blue);
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -321,7 +326,7 @@
         }
 
         .member-link {
-            background: var(--pure-black);
+            background: var(--merlins-blue);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -331,14 +336,14 @@
         }
 
         .member-link:hover {
-            background: var(--primary-red);
+            background: var(--merlins-dark-blue);
             transform: translateY(-2px);
         }
 
         /* Values Section */
         .values-section {
             padding: 100px 0;
-            background: var(--pure-black);
+            background: linear-gradient(135deg, var(--merlins-dark-blue) 0%, var(--pure-black) 100%);
         }
 
         .values-container {
@@ -365,14 +370,14 @@
 
         .value-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-red);
-            box-shadow: 0 10px 40px rgba(255,51,51,0.2);
+            border-color: var(--merlins-blue);
+            box-shadow: 0 10px 40px rgba(43,76,140,0.3);
         }
 
         .value-icon {
             width: 80px;
             height: 80px;
-            background: var(--primary-red);
+            background: var(--merlins-blue);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -420,9 +425,10 @@
         }
 
         .tech-item:hover {
-            background: var(--primary-red);
+            background: var(--merlins-blue);
             color: white;
             transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(43,76,140,0.3);
         }
 
         .tech-item h4 {
@@ -433,7 +439,7 @@
         /* Achievements Section */
         .achievements-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            background: linear-gradient(135deg, var(--merlins-blue) 0%, var(--merlins-dark-blue) 100%);
         }
 
         .achievements-container {
@@ -517,8 +523,9 @@
         }
 
         .contact-method:hover {
-            background: var(--primary-red);
+            background: var(--merlins-blue);
             color: white;
+            transform: translateX(10px);
         }
 
         .contact-icon {
@@ -553,7 +560,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary-red);
+            color: var(--merlins-blue);
         }
 
         /* Animations */
@@ -609,7 +616,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo-section">
-                <img src="merlinslogo.png" alt="Merlins Group" class="merlins-logo">
+                <img src="merlinsgroup.png" alt="Merlins Group" class="merlins-logo">
                 <span class="logo-text">MERLINS GROUP</span>
             </div>
             <div class="nav-links">
@@ -617,7 +624,7 @@
                 <a href="#values">Our Values</a>
                 <a href="#technology">Technology</a>
                 <a href="#contact">Contact</a>
-                <a href="index.html" class="back-button">Back to Easy2Recruit</a>
+                <a href="index.html" class="back-button" style="background: white; color: var(--merlins-blue);">Back to Easy2Recruit</a>
             </div>
         </nav>
     </header>
